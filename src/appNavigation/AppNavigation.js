@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -7,25 +7,29 @@ import WelcomeScreen from '../screens/WelcomeScreen';
 import HomeScreen from '../screens/HomeScreen';
 import DetailScreen from '../screens/DetailScreen';
 import WishList from '../screens/WishList';
+import { myContext } from '../provider/ContextApi';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
+
 const HomeNested = () => {
+
     return (
         <Stack.Navigator initialRouteName='HomeScreen'>
             <Stack.Screen name='HomeScreen' component={HomeScreen} options={{ headerShown: false }} />
             <Stack.Screen name='DetailScreen' component={DetailScreen} options={{ headerShown: false }} />
-            <Stack.Screen 
-                name='WishList' 
-                component={WishList} 
-                options={{ headerShown: true, title: 'My Wish Items' }} 
+            <Stack.Screen
+                name='WishList'
+                component={WishList}
+                options={{ headerShown: true, title: 'My Wish Items' }}
             />
         </Stack.Navigator>
     );
 };
 
 const TabNavigationScreens = () => {
+    const { wishlist } = useContext(myContext);
     return (
         <Tab.Navigator
             screenOptions={({ route }) => ({
@@ -50,7 +54,7 @@ const TabNavigationScreens = () => {
             <Tab.Screen
                 name="WishList"
                 component={WishList}
-                options={{ headerShown: true, title: 'Wishlist' }}
+                options={{ headerShown: true, title: `My Wish Items ${wishlist.length>0?wishlist.length:""}` }}
             />
         </Tab.Navigator>
     );

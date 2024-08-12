@@ -10,7 +10,7 @@ const WishList = ({ navigation }) => {
 
   const renderItem = ({ item }) => {
     return (
-      <LinearGradient colors={['#f08522', '#eb4034', '#2d2e2d']} className="mx-4 my-2 p-4 rounded-lg shadow-sm shadow-black">
+      <LinearGradient colors={['#f08522', '#eb4034', '#2d2e2d']} className="mx-4 my-4 p-4 rounded-lg shadow-sm shadow-black">
         <TouchableOpacity onPress={() => navigation.navigate('DetailScreen', { item })}>
           <View className=" bg-white rounded-lg p-4">
             <View className="absolute right-4 top-4">
@@ -48,11 +48,14 @@ const WishList = ({ navigation }) => {
           </View>
         </TouchableOpacity>
       </LinearGradient>
+
+
     );
   };
 
   return (
     <View className="flex-1">
+
       <FlatList
         data={wishlist}
         keyExtractor={(item) => item.id.toString()}
