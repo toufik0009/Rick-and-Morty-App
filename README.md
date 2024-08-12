@@ -1,6 +1,6 @@
 ## About Is App
 ![Rick-and-Morty-8-11-2024 (1)](https://github.com/user-attachments/assets/ada2d017-0be2-446c-9d6c-6394741f2be3)
-I create this Rick and Morty Character Explorer App using React Native and TailwindCSS. It is a very popular Cartoon Show. In this app users can know. Here the user can khow abour
+I create this Rick and Morty Character Explorer App using React Native and TailwindCSS. It is a very popular Cartoon Show. In this app users can know about
 Rick and Marty and add their favourite characters on wishlist.
 
 # Technology
